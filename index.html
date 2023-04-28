@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     </head>
     <body>
 
-    <section>
+    <section class="container clearfix">
         <h1>Password Generator</h1>
 
         <h2>Enter your character limit<br>
@@ -19,23 +19,82 @@
         <input class="char-limit-box" type="number" name="characterLimit">
     
         <h2>Word or phrase you can remember for your password, keep in mind of the character limit</h2>
-        <input class="phrase-box"type="text" name="phrase">
+        <input class="phrase-box" type="text" name="phrase" placeholder="Optional">
+
+        <h3>Password Style</h3>
+
+        <input type="checkbox" id="randNumb" name="random-number-box">
+        <label for = "random-number-check">Generate Numbers</label>
+
+        <input type="checkbox" id="randUpCase" name="random-upper-case">
+        <label for = "random-upper-case-box">Random Upper Case</label>
+
+        <input type="checkbox" id="randLowCae" name="random-lower-case">
+        <label for = "random-upper-case-box">Random Lower Case</label>
 
         <h3>Special Character Cases</h3>
-        <input type="checkbox" id="exPoint" name="exclamationPoint" value="!">
-        <label for="exclPoint">!</label>
-        <input type="checkbox" id="poundHash" name="poundAndHash" value="#">
-        <label for="poundHash">#</label>
+
+        <input type="checkbox" id="exPoint" name="exclamationPoint" value = "!">
+        <label for = "!">!</label>
+
         <input type="checkbox" id="pd" name="period" value=".">
-        <label for="pd">.</label>
-        <input type="checkbox" id="dolSign" name="dollar-sign" value="$">
-        <label for="money">.</label>
-        <input type="checkbox" id="money" name="dollar-sign" value="$">
-        <label for="money">.</label>
+        <label for = ".">.</label>
+
+        <input type = "checkbox" id="ampSans" name="amper-sign" value="^">
+        <label for = "&">&</label>
+
+        <input type = "checkbox" id="poundHash" name="poundAndHash" value="#">
+        <label for = "#">#</label>
+
+        <input type = "checkbox" id="dolSign" name="dollar-sign" value="$">
+        <label for = "$">$</label>
+
+        <input type = "checkbox" id="pctSign" name="percent-sign" value="%">
+        <label for = "%">%</label>
+
+        <input type = "checkbox" id="ampSans" name="amper-sign" value="^">
+        <label for = "&">&</label>
+
+        <input type = "checkbox" id="up" name="up-sign" value="^">
+        <label for = "^">^</label>
+
+        <input type = "checkbox" id="minSign" name="minus-sign" value="-">
+        <label for = "-">-</label>
+
+        <input type = "checkbox" id="plSign" name="plus-sign" value="+">
+        <label for = "+">+</label>
+        
+        <input type = "checkbox" id="eqSign" name="equal-sign" value="=">
+        <label for = "equal">=</label>
+
+        <input type = "checkbox" id="leftBrack" name="left-bracket-sign" value="[">
+        <label for = "[">[</label>
+
+        <input type = "checkbox" id="rightBrack" name="right-bracket-sign" value="]">
+        <label for = "]">]</label>
+
+        <input type = "checkbox" id="sepLine" name="pipe-symbol" value="|">
+        <label for = "|">|</label>
+
+        <input type="checkbox" id="undLine" name="under-line" value="_">
+        <label for="&">_</label>
+
+        <input type = "checkbox" id="colSign" name="colon-sign" value=":">
+        <label for = ":">|</label>
+
+        <input type = "checkbox" id="semCol" name="semicolon-sign" value=";">
+        <label for = ";">;</label>
+
+        <input type = "checkbox" id="til" name="tilde-sign" value="~">
+        <label for = "~">~</label>
         <br>
         <button>Generate Password</button>
     </section>    
 
-        <script src="" async defer></script>
+    <section class="password container clearfix">
+        <textarea readonly id="printedPass" placeholder="Password Will Be Generated Here"></textarea>
+    </section>
+
+        <script async src=""></script>
     </body>
 </html>
