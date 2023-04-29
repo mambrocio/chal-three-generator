@@ -29,23 +29,27 @@
             <input type="checkbox" id="randNumb" name="random-number-box">
             <label for="random-number-check">Generate Numbers</label>
         </div>
+        <div class="gen-select">
             <input type="checkbox" id="randUpCase" name="random-upper-case">
             <label for = "random-upper-case-box">Random Upper Case</label>
-        <div class="gen-select">
-        <input type="checkbox" id="randLowCase" name="random-lower-case">
-        <label for = "random-upper-case-box">Random Lower Case</label>
         </div>
-        <div class="gen-selcet">    
-        <input type="checkbox" id="randCases" name="random-special-case">
-        <label for = "random-special-case-box">Random Character Cases</label>
+        <div class="gen-select">
+            <input type="checkbox" id="randLowCase" name="random-lower-case">
+            <label for = "random-upper-case-box">Random Lower Case</label>
+        </div>
+        <div class="gen-select">    
+            <input type="checkbox" id="randCases" name="random-special-case">
+            <label for = "random-special-case-box">Random Character Cases</label>
         </div>
     </div>    
+    <button>Generate Password</button>
     </div>
-        <button>Generate Password</button>
     </section>    
 
     <section class="password container clearfix">
-        <textarea readonly id="printedPass" placeholder="Password Will Be Generated Here"></textarea>
+        <textarea readonly id="printedPass" maxlength="128" placeholder="Password Will Be Generated Here"></textarea>
+        <br>
+        <button onclick="copyFunction()">Copy text</button>
     </section>
 
         <script async src="scripts/main.js"></script>
