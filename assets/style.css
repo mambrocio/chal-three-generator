@@ -130,9 +130,6 @@ border: 1px solid rgba(120, 180, 120, 0.3);
     justify-content: center;
 }
 
-.char-changer input, label{
-}
-
 .password{
     margin-top: 20px ;
 }
