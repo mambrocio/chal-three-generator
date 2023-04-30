@@ -17,11 +17,11 @@
             Must be between a minimum of 8 to a maximum of 128 characters
             </h2>
 
-        <input class="char-limit-box" type="number" name="characterLimit">
+        <input class="char-limit-box" id="charLimit" type="number" name="characterLimit">
         </div>
         <div class="special-phrase">
             <h2>Word or phrase you can remember for your password, keep in mind of the character limit</h2>
-            <input class="phrase-box" type="text" name="phrase" placeholder="Optional">
+            <input class="phrase-box" id="optPhrase" type="text" name="phrase" placeholder="Optional">
         </div>
         <h3>Password Style</h3>
         <div class="char-changer">
@@ -49,7 +49,7 @@
     <section class="password container clearfix">
         <textarea readonly id="printedPass" maxlength="128" placeholder="Password Will Be Generated Here"></textarea>
         <br>
-        <button onclick="copyFunction()">Copy text</button>
+        <button onclick="copyFunction()">Copy text</button> <button onclick="reloadPage()">Copy text</button>
     </section>
 
         <script async src="scripts/main.js"></script>
