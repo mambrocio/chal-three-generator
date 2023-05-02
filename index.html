@@ -41,17 +41,19 @@
             <input type="checkbox" id="randCases" name="random-special-case">
             <label for = "random-special-case-box">Random Character Cases</label>
         </div>
+
     </div>    
     <button>Generate Password</button>
     </div>
     </section>    
 
     <section class="password container clearfix">
-        <textarea readonly id="printedPass" maxlength="128" placeholder="Password Will Be Generated Here"></textarea>
+        <textarea readonly id="printedPass" maxlength="129" placeholder="Password Will Be Generated Here"></textarea>
         <br>
-        <button onclick="copyFunction()">Copy text</button> <button onclick="reloadPage()">Copy text</button>
     </section>
-
+    <section>
+        <button onclick="copyFunction()">Copy Password</button>
+    </section>
         <script async src="scripts/main.js"></script>
         </main>
     </body>

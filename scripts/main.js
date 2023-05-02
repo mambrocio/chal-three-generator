@@ -2,15 +2,12 @@ let charLength = 0;
 let charMaxLength = 128;
 let charMinLength = 8;
 
-let charLowCases=[];
-let charNum = [];
-let charCaseRandom = ['!','@','#','$','%','^','&','*','[',']','{','}',';','<','>','/','?']
+let numbers = '0123456789';
+let charUpCases = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let charLowCases='abcdefghijklmnopqrstuvwxyz';
+let charCaseRandom = ['!','@','#','$','%','^','&','*','[',']','{','}',';','<','>','/','?'];
 
 let charEnter = document.getElementById('charLimit').value;
-let specialPhrase = document.getElementById('optPhrase').value;
-
-console.log(charEnter);
-console.log(specialPhrase);
 
 function charLimit(){
     charCount = charLength + charEnter;
@@ -23,23 +20,41 @@ function charLimit(){
     }
 }
 
-function count(){
-    for(var i = 0; i <= 10; i++){
-    console.log(i)
-    }
+let specialPhrase = document.getElementById("optPhrase").value;
+
+function numberGen(){
+    checkboxNumb = document.getElementById("randNumb");
+    checkboxNumb.addEventListener('change', function(e) {
+    console.log(checkboxNumb.checked, numbers);
+});
 }
-count();
-
-
-
-function numberArray(){
+numberGen()
     
+
+function upperGen(){
+    checkboxUp = document.getElementById("randUpCase");
+    checkboxUp.addEventListener('change', function(e) {
+    console.log(checkboxUp.checked, charUpCases);
+});
 }
+upperGen()
 
-
-function choices(){
-
+function lowerGen(){
+    checkboxLow = document.getElementById("randLowCase");
+    checkboxLow.addEventListener('change', function(e) {
+    console.log(checkboxLow.checked, charLowCases);
+});
 }
+lowerGen()
+    
+function caseGen(){
+    checkboxCases = document.getElementById("randCases");
+    checkboxCases.addEventListener('change', function(e) {
+    console.log(checkboxCases.checked, charCaseRandom);
+});
+}
+caseGen()
+
 
 //Copy Clipboard Function from https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
 function copyFunction() {
@@ -55,9 +70,4 @@ function copyFunction() {
 
     // Alert the copied text
     alert("Copied the text: " + copyText.value);
-}
-
-function reloadPage(){
-    location.reload();
-    return false;
 }
