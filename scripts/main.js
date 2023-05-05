@@ -1,78 +1,81 @@
-let charLength = 0;
 let charMaxLength = 128;
 let charMinLength = 8;
+let charLength;
+let defaultBox = '';
 
+
+let selectChar = [];
 let numbers = '0123456789';
 let charUpCases = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let charLowCases='abcdefghijklmnopqrstuvwxyz';
 let charCaseRandom = ['!','@','#','$','%','^','&','*','[',']','{','}',';','<','>','/','?'];
 
-let charEnter = document.getElementById('charLimit').value;
+let charLimit = document.getElementById("charLimit");
 
-// function charLimit(){
-//     charCount = charLength + charEnter;
-//     if(charCount < charMinLength)
-//         alert("Please enter a password set value of at least 8")
-//     else if (charCount > charMaxLength)
-//         alert("Password exceeds the character count of 128")
-//     else{
-//         return charLimit;
-//     }
-// }
-// charLimit()
+
 
 function numberGen(){
     checkboxNumb = document.getElementById("randNumb");
     checkboxNumb.addEventListener('change', function(e) {
-    checkboxCases.checked, numbers
+    checkboxNumb.checked
+    console.log(checkboxNumb.checked)
 });
 }
-numberGen()
-    
+
 
 function upperGen(){
     checkboxUp = document.getElementById("randUpCase");
     checkboxUp.addEventListener('change', function(e) {
-    checkboxCases.checked, charUpCases
+    checkboxUp.checked
+    console.log(checkboxUp.checked)
 });
 }
-upperGen()
+
 
 function lowerGen(){
     checkboxLow = document.getElementById("randLowCase");
     checkboxLow.addEventListener('change', function(e){
-    checkboxCases.checked, charLowCases
+    checkboxLow.checked
+    console.log(checkboxLow.checked);
 });
 }
-lowerGen()
+
     
 function caseGen(){
     checkboxCases = document.getElementById("randCases");
-    checkboxCases.addEventListener('change', function(e) {
-    console.log (charCaseRandom)
-});
+    checkboxCases.addEventListener('change', function(e){
+    selectChar = selectChar.concat(charCaseRandom)
+    console.log(checkboxCases.checked);
+}); 
 }
-caseGen();
+
+numberGen()
+upperGen()
+lowerGen()
+caseGen()
+
+function generatePW(){
+
+    if(charLimit.value > charMaxLength)
+    alert("Password exceeds the character count of 128")
+        else if (charLimit.value < charMinLength)
+   alert("Please enter a password set value of at least 8")
+    else{
+         console.log (charLimit.value)
+}
+
+    // let password = '';
+    // let charEnter;
+    // do{
+    //     if(checkboxCases.checked == true && upperGen == true && lowerGen == true && caseGen == true){
 
 
+    // }
+
+    // } while (charLimit> charMinLength && charLimit < charMaxLength)
 
 
-// function generatePW(){
-//     let password = '';
-//     let charEnter;
-//     do{
-//         if(numberGen == true && upperGen == true && lowerGen == true && caseGen == true){
-//             combineFactors = numberGen + upperGen + lowerGen + caseGen
-
-//         }
-
-//     } while (charEnter > charMinLength && charEnter < charMaxLength)
-
-//     if(charEnter < charMinLength)
-//         alert("Please enter a password set value of at least 8")
-//         else if (charEnter > charMaxLength)
-//         alert("Password exceeds the character count of 128")
-// }
+}
 
 
 
@@ -91,3 +94,6 @@ function copyFunction() {
     // Alert the copied text
     alert("Copied the text: " + copyText.value);
 }
+
+
+
