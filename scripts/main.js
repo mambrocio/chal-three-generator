@@ -13,7 +13,6 @@ let charCaseRandom = ['!','@','#','$','%','^','&','*','[',']','{','}',';','<','>
 let charLimit = document.getElementById("charLimit");
 
 
-
 function numberGen(){
     checkboxNumb = document.getElementById("randNumb");
     checkboxNumb.addEventListener('change', function(e) {
@@ -21,7 +20,6 @@ function numberGen(){
     console.log(checkboxNumb.checked)
 });
 }
-
 
 function upperGen(){
     checkboxUp = document.getElementById("randUpCase");
@@ -31,7 +29,6 @@ function upperGen(){
 });
 }
 
-
 function lowerGen(){
     checkboxLow = document.getElementById("randLowCase");
     checkboxLow.addEventListener('change', function(e){
@@ -40,29 +37,34 @@ function lowerGen(){
 });
 }
 
-    
 function caseGen(){
     checkboxCases = document.getElementById("randCases");
     checkboxCases.addEventListener('change', function(e){
-    selectChar = selectChar.concat(charCaseRandom)
-    console.log(checkboxCases.checked);
-}); 
+    cases = checkboxCases.checked
+    //console.log(checkboxCases.checked)
+    return cases;
+})
 }
 
-numberGen()
-upperGen()
-lowerGen()
+// numberGen()
+// upperGen()
+// lowerGen()
 caseGen()
 
 function generatePW(){
 
+    addCases = cases
+    console.log(addCases)
+
     if(charLimit.value > charMaxLength)
     alert("Password exceeds the character count of 128")
         else if (charLimit.value < charMinLength)
-   alert("Please enter a password set value of at least 8")
+    alert("Please enter a password set value of at least 8")
     else{
-         console.log (charLimit.value)
-}
+        console.log(charLimit.value)
+        charLimit.value 
+    }
+
 
     // let password = '';
     // let charEnter;
@@ -74,12 +76,12 @@ function generatePW(){
 
     // } while (charLimit> charMinLength && charLimit < charMaxLength)
 
-
 }
 
 
 
 //Copy Clipboard Function from https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+
 function copyFunction() {
     // Get the text field
     let copyText = document.getElementById("printedPass");
