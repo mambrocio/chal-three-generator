@@ -10,14 +10,14 @@ let charCaseRandom = '!@#$%^&,[];<>/?'
 let charLimit = document.getElementById("charLimit");
 
 
-function numberGen(){
+
     checkboxNumb = document.getElementById("randNumb");
     checkboxNumb.addEventListener('change', function(e){
     num = checkboxNumb
     //console.log(checkboxNumb.checked)
     return num;
-    });
-}
+    })
+
 
 function upperGen(){
     checkboxUp = document.getElementById("randUpCase");
@@ -47,12 +47,12 @@ function caseGen(){
 });
 }
 
-numberGen()
+
 upperGen()
 lowerGen()
 caseGen()
 
-function generatePW(){
+function generatePW(num, tall, short, addCases){
 
     if(charLimit.value > charMaxLength)
     alert("Password exceeds the character count of 128")
@@ -65,31 +65,30 @@ function generatePW(){
 
     let finalPass ='';
 
-    try {
-        let digits = num.checked;
-        console.log(digits)
-
-        let tall = up.checked;
-        console.log(tall)
-
-        let short = low.checked;
-        console.log(short)
-
-        let addCases = cases.checked;
-        console.log(addCases)
-    } catch (e){
-        console.log(e)
-    }
-
     do {
         if(num === false && tall === true && short === true && addCases === true)
+        try {
+            let digits = num.checked;
+            console.log(digits)
     
-        var allCombined = numbers + charUpCases + charLowCases + charCaseRandom
+            let tall = up.checked;
+            console.log(tall)
+    
+            let short = low.checked;
+            console.log(short)
+    
+            let addCases = cases.checked;
+            console.log(addCases)
+        } catch (e){
+            console.log(e)
+        }
+    
+        allCombined = charUpCases + charLowCases + charCaseRandom
             while(finalPass.length < charLimit.value){
                 finalPass += allCombined[Math.floor(Math.random() * allCombined.length)]
             }
             document.getElementById("printedPass").innerHTML = finalPass;
-        
+
     } while (charLimit > charMinLength && charLimit < charMaxLength) 
 }
 
